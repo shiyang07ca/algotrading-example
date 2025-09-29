@@ -1,0 +1,21 @@
+[project]
+name = "algotrading-example"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [{ name = "shiyang07ca", email = "shiyang07ca@gmail.com" }]
+dependencies = [
+    "pandas>=2.3.2",
+    "aiohttp>=3.12.15",
+    "numba>=0.62.0",
+    "scipy>=1.16.2",
+    "numpy>=2.3.3",
+    "scikit-learn>=1.7.2",
+    "jupyter>=1.1.1",
+]
+requires-python = "==3.12.*"
+readme = "README.md"
+license = { text = "MIT" }
+
+
+[tool.pdm]
+distribution = false
