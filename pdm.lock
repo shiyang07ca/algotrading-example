@@ -5,7 +5,7 @@
 groups = ["default"]
 strategy = ["inherit_metadata"]
 lock_version = "4.5.0"
-content_hash = "sha256:913d5d2c6c90a15b7c4a723f38f2463defb4828d64408b3b7c4ef143c941893c"
+content_hash = "sha256:6cb31ccb5874737eed09decde126df28fd4fda0295a3924b7fcf858c67aee6d4"
 
 [[metadata.targets]]
 requires_python = "==3.12.*"
@@ -251,6 +251,26 @@ files = [
 ]
 
 [[package]]
+name = "btrees"
+version = "6.1"
+requires_python = ">=3.8"
+summary = "Scalable persistent object containers"
+groups = ["default"]
+dependencies = [
+    "persistent>=4.1.0",
+    "zope-interface>=5.0.0",
+]
+files = [
+    {file = "BTrees-6.1-cp312-cp312-macosx_10_9_x86_64.whl", hash = "sha256:913890a8f5cce402fda7a06d9eaaf4ddda64a042e5c764c38fe5fb2004099072"},
+    {file = "BTrees-6.1-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:407648d72812b19bea2a3f98a2188a17121e9b5add0c12416f8bcecd724cec0b"},
+    {file = "BTrees-6.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:860b3b6f0d5d4b34e6168e6490d0b26586e8b6c33cad7d5893f97fa3f4b3ff16"},
+    {file = "BTrees-6.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:789a5b858cbee0a4750e7e3b4c13a1e47e6b9c7be50329087e621bff6d81154e"},
+    {file = "BTrees-6.1-cp312-cp312-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:a76dbeed484720cf7aa231f3552665df91bda0dbb357aab5fefefde133eef89e"},
+    {file = "BTrees-6.1-cp312-cp312-win_amd64.whl", hash = "sha256:b4e2a878acdb9e1087c71e8914909a3d582617c496adea8a02bc839285666b0f"},
+    {file = "btrees-6.1.tar.gz", hash = "sha256:e18746f8641869a20f45328c9b5f97dc6c71a1195960356aef63b75f5c8d445f"},
+]
+
+[[package]]
 name = "certifi"
 version = "2025.8.3"
 requires_python = ">=3.7"
@@ -267,7 +287,7 @@ version = "2.0.0"
 requires_python = ">=3.9"
 summary = "Foreign Function Interface for Python calling C code."
 groups = ["default"]
-marker = "implementation_name == \"pypy\" or python_version < \"3.14\""
+marker = "platform_python_implementation == \"CPython\" or implementation_name == \"pypy\" or python_version < \"3.14\""
 dependencies = [
     "pycparser; implementation_name != \"PyPy\"",
 ]
@@ -1237,6 +1257,28 @@ files = [
 ]
 
 [[package]]
+name = "persistent"
+version = "6.1.1"
+requires_python = ">=3.8"
+summary = "Translucent persistent objects"
+groups = ["default"]
+dependencies = [
+    "cffi; platform_python_implementation == \"CPython\"",
+    "cffi>=1.17.0rc1; platform_python_implementation == \"CPython\" and python_version >= \"3.13a0\"",
+    "zope-deferredimport",
+    "zope-interface",
+]
+files = [
+    {file = "persistent-6.1.1-cp312-cp312-macosx_10_9_x86_64.whl", hash = "sha256:ce7528a7d55729d14ecc00e8be29cdb7c704d9f944f3ddfdb4eb107787e54eab"},
+    {file = "persistent-6.1.1-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:030eaf3f723925e44eabfc12d43828e692f1d7023c5ffe3f375c344a21ad2ad8"},
+    {file = "persistent-6.1.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:1746e226bb9c0ac2a7e359eae8813719310f48d1ae62c3f6be20434caba4f30a"},
+    {file = "persistent-6.1.1-cp312-cp312-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:e3efc4975139f2e7424504e0bbec7c809a32b96f05b0b243547b1cad91e1ef01"},
+    {file = "persistent-6.1.1-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:ec502840d0ede3f2e1c4f38b410a011c12f69be9268949e4e2b42aefe9fd7906"},
+    {file = "persistent-6.1.1-cp312-cp312-win_amd64.whl", hash = "sha256:4f36a13d70513909ee02f27f2fff9bea046dc0230d759ab6d5123129b74676d4"},
+    {file = "persistent-6.1.1.tar.gz", hash = "sha256:2d321b60eb07ef900f85a96cf071ff8c3b9aee6e679becc48c46f3457e8d9d2f"},
+]
+
+[[package]]
 name = "pexpect"
 version = "4.9.0"
 summary = "Pexpect allows easy control of interactive console applications."
@@ -1358,7 +1400,7 @@ version = "2.23"
 requires_python = ">=3.8"
 summary = "C parser in Python"
 groups = ["default"]
-marker = "implementation_name == \"pypy\" or python_version < \"3.14\" and implementation_name != \"PyPy\""
+marker = "platform_python_implementation == \"CPython\" and implementation_name != \"PyPy\" or implementation_name == \"pypy\" or python_version < \"3.14\" and implementation_name != \"PyPy\""
 files = [
     {file = "pycparser-2.23-py3-none-any.whl", hash = "sha256:e5c6e8d3fbad53479cab09ac03729e0a9faf2bee3db8208a550daf5af81a5934"},
     {file = "pycparser-2.23.tar.gz", hash = "sha256:78816d4f24add8f10a06d6f05b4d424ad9e96cfebf68a4ddc99c65c0720d00c2"},
@@ -1904,4 +1946,55 @@ files = [
     {file = "yarl-1.20.1-cp312-cp312-win_amd64.whl", hash = "sha256:48ea7d7f9be0487339828a4de0360d7ce0efc06524a48e1810f945c45b813698"},
     {file = "yarl-1.20.1-py3-none-any.whl", hash = "sha256:83b8eb083fe4683c6115795d9fc1cfaf2cbbefb19b3a1cb68f6527460f483a77"},
     {file = "yarl-1.20.1.tar.gz", hash = "sha256:d017a4997ee50c91fd5466cef416231bb82177b93b029906cefc542ce14c35ac"},
+]
+
+[[package]]
+name = "zope-deferredimport"
+version = "6.0"
+requires_python = ">=3.9"
+summary = "zope.deferredimport allows you to perform imports names that will only be resolved when used in the code."
+groups = ["default"]
+dependencies = [
+    "setuptools",
+    "zope-proxy",
+]
+files = [
+    {file = "zope_deferredimport-6.0-py3-none-any.whl", hash = "sha256:2b7197ae50ef4015560f00c7187f44d2ab041328d3250475042ffa8086e09512"},
+    {file = "zope_deferredimport-6.0.tar.gz", hash = "sha256:dcceab59470497adb1bf32051a12355cde4e7f629ae1d21ac16ba830bc717fed"},
+]
+
+[[package]]
+name = "zope-interface"
+version = "8.0.1"
+requires_python = ">=3.9"
+summary = "Interfaces for Python"
+groups = ["default"]
+files = [
+    {file = "zope_interface-8.0.1-cp312-cp312-macosx_10_9_x86_64.whl", hash = "sha256:115f27c1cc95ce7a517d960ef381beedb0a7ce9489645e80b9ab3cbf8a78799c"},
+    {file = "zope_interface-8.0.1-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:af655c573b84e3cb6a4f6fd3fbe04e4dc91c63c6b6f99019b3713ef964e589bc"},
+    {file = "zope_interface-8.0.1-cp312-cp312-manylinux1_i686.manylinux2014_i686.manylinux_2_17_i686.manylinux_2_5_i686.whl", hash = "sha256:23f82ef9b2d5370750cc1bf883c3b94c33d098ce08557922a3fbc7ff3b63dfe1"},
+    {file = "zope_interface-8.0.1-cp312-cp312-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl", hash = "sha256:35a1565d5244997f2e629c5c68715b3d9d9036e8df23c4068b08d9316dcb2822"},
+    {file = "zope_interface-8.0.1-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:029ea1db7e855a475bf88d9910baab4e94d007a054810e9007ac037a91c67c6f"},
+    {file = "zope_interface-8.0.1-cp312-cp312-win_amd64.whl", hash = "sha256:0beb3e7f7dc153944076fcaf717a935f68d39efa9fce96ec97bafcc0c2ea6cab"},
+    {file = "zope_interface-8.0.1.tar.gz", hash = "sha256:eba5610d042c3704a48222f7f7c6ab5b243ed26f917e2bc69379456b115e02d1"},
+]
+
+[[package]]
+name = "zope-proxy"
+version = "7.0"
+requires_python = ">=3.9"
+summary = "Generic Transparent Proxies"
+groups = ["default"]
+dependencies = [
+    "setuptools",
+    "zope-interface",
+]
+files = [
+    {file = "zope_proxy-7.0-cp312-cp312-macosx_10_9_x86_64.whl", hash = "sha256:5203ce11bb31cca7166be0cab4bc924464783317d9fafa381eca31b94e3bfc7e"},
+    {file = "zope_proxy-7.0-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:cc8a05a367f63557e1173d86a66a455d3b1b521e9524b3ef5ec731a7cb65ca8b"},
+    {file = "zope_proxy-7.0-cp312-cp312-manylinux1_i686.manylinux2014_i686.manylinux_2_17_i686.manylinux_2_5_i686.whl", hash = "sha256:e2592fea31dbed4a918bd41970cdf4599d60d7c94f378a72a42a52aed27a164c"},
+    {file = "zope_proxy-7.0-cp312-cp312-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl", hash = "sha256:5113501cfb08e6aeb31bd25ad3906ea16dbbfd0379c38be0fcd4883bcaf55d8f"},
+    {file = "zope_proxy-7.0-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:6bf54de67b2fe35e9d22cae15adf492c016df628240ea57e661c5a3ccfe873be"},
+    {file = "zope_proxy-7.0-cp312-cp312-win_amd64.whl", hash = "sha256:51af695da3b37c3406d24f2cfe34ea2ba06200d193b42c478f8dbb759de7d4f5"},
+    {file = "zope_proxy-7.0.tar.gz", hash = "sha256:19cddee4b376ae9791fd6ddb491e861e3a7317a97b49a946b2e3c3f78254564c"},
 ]
